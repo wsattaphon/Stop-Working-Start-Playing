@@ -404,28 +404,42 @@
   .matrix-players .player-label.p-total { color: var(--text-light); }
 
   /* Each scenario row as a visual card */
+  /* ── MATRIX ROW BASE ── */
   .matrix-row {
-    background: white;
     border: 1.5px solid var(--border);
+    border-left: 5px solid #a0aec0;
     border-radius: 14px;
     padding: 16px 18px;
     margin-bottom: 10px;
     transition: box-shadow 0.2s;
+    background: #f8f9fc;
   }
   .matrix-row:hover { box-shadow: 0 4px 16px rgba(26,43,69,0.08); }
 
+  /* สีเหลือง — สถานการณ์ปัจจุบัน */
   .matrix-row.row-current {
-    border-color: #fcd06b;
-    background: #fffdf5;
+    background: #fffde7;
+    border-color: #f5c842;
+    border-left-color: #e6a800;
   }
+  /* สีเขียว — ทางออกที่ดีที่สุด */
   .matrix-row.row-best {
-    border-color: #22a65a;
-    background: #f2fbf6;
-    box-shadow: 0 0 0 2px #22a65a22;
+    background: #f0faf4;
+    border-color: #6fcf97;
+    border-left-color: #22a65a;
+    box-shadow: 0 0 0 1px #22a65a22;
   }
+  /* สีแดง — ผลเสีย/กับดัก */
   .matrix-row.row-bad {
-    border-color: #ffd0d0;
-    background: #fff8f8;
+    background: #fff5f5;
+    border-color: #f5a0a0;
+    border-left-color: #e84040;
+  }
+  /* สีฟ้า — กลาง/ทางเลือกอื่น */
+  .matrix-row.row-neutral {
+    background: #f0fafc;
+    border-color: #9fd8e0;
+    border-left-color: var(--accent-teal);
   }
 
   /* Scenario label at top */
@@ -444,10 +458,10 @@
     border-radius: 20px;
     text-transform: uppercase;
   }
-  .badge-current { background: #fff3cd; color: #b87800; border: 1px solid #fcd06b; }
-  .badge-best    { background: #d4f5e4; color: #1a7a40; border: 1px solid #6fcf97; }
-  .badge-bad     { background: #fde8e8; color: #c0392b; border: 1px solid #f5b5b5; }
-  .badge-neutral { background: #eef1f7; color: #4a5568; border: 1px solid #c5cfe0; }
+  .badge-current { background: #fde68a; color: #92400e; border: 1px solid #f5c842; }
+  .badge-best    { background: #bbf7d0; color: #14532d; border: 1px solid #4cbb7f; }
+  .badge-bad     { background: #fecaca; color: #7f1d1d; border: 1px solid #f5a0a0; }
+  .badge-neutral { background: #cffafe; color: #164e63; border: 1px solid #67e8f9; }
 
   .scenario-name {
     font-family: 'Sarabun', sans-serif;
@@ -1586,7 +1600,7 @@
 
   .fw-item strong { color: var(--text-dark); }
 
-  .matrix-row.row-neutral { border-color: var(--border); background: white; }
+  /* row-neutral defined above */
 
     .situation-box, .matrix-section, .insight-box, .pure-section, .ovac-section { margin: 0 28px 24px; }
 
@@ -6691,7 +6705,7 @@
     </div>
 
     <!-- Row 3: Neutral -->
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">เสนอพร้อมแผนลดความเสี่ยง + หัวหน้าไม่อนุมัติ</span>
@@ -6976,7 +6990,7 @@
     </div>
 
     <!-- Row 3: Partial -->
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">ลงมือทำเป็นแบบอย่าง + ทีมยังระแวง</span>
@@ -7260,7 +7274,7 @@
     </div>
 
     <!-- Row 3: Partial -->
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">เสนอทางแก้เชิงระบบ + บอสมองไม่เห็นค่า</span>
@@ -7543,7 +7557,7 @@
     </div>
 
     <!-- Row 3: Partial -->
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">ยกเครดิตทีม + โชว์ดาต้า + ที่ประชุมหมั่นไส้</span>
@@ -8020,7 +8034,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก C</span>
         <span class="scenario-name">คุณ: ไม่รับ + แคนดิเดต: เก่งแค่โปรไฟล์ (Low Skill)</span>
@@ -8240,7 +8254,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">หัวหน้า: ตรวจสอบเข้ม + ลูกน้อง: ร่วมมือกัน</span>
@@ -8537,7 +8551,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">บริษัท: คุมงานใกล้ชิด + Outsource: โปร่งใส</span>
@@ -8805,7 +8819,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">หัวหน้า: จี้ถามละเอียด + ลูกน้อง: พูดความจริง</span>
@@ -9246,7 +9260,7 @@
     </div>
 
     <!-- Row 3: Partial -->
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">ใช้บารมีเบื้องบนบีบ + Manager เดิมยอมปล่อย</span>
@@ -9743,7 +9757,7 @@
     </div>
 
     <!-- Row 3: Partial -->
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">คุณปฏิเสธแบบมีเหตุผล + บอสยืนยันให้คุณทำ</span>
@@ -9945,7 +9959,7 @@
     </div>
 
     <!-- Row 3: Partial good -->
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">บริษัทขู่จะเปลี่ยนเจ้า + Supplier ยอมลดราคา</span>
@@ -10281,7 +10295,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">คุณ: ประนีประนอม/ให้เกียรติ + Senior: ขัดขวาง</span>
@@ -10307,7 +10321,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก C</span>
         <span class="scenario-name">คุณ: บังคับใช้ระบบใหม่ + Senior: ร่วมมือ</span>
@@ -10549,7 +10563,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">บริษัท: ชี้แจง/ปรับกติกา + พนักงาน: ประท้วง/อู้งาน</span>
@@ -10575,7 +10589,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก C</span>
         <span class="scenario-name">บริษัท: นิ่งเฉย/อ้างกฎ + พนักงาน: ตั้งใจทำงานต่อ</span>
@@ -10817,7 +10831,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ฝ่าย A กีดกัน</span>
         <span class="scenario-name">ฝ่าย A: กีดกันฝ่าย B + ฝ่าย B: วางเรื่องส่วนตัว</span>
@@ -10843,7 +10857,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ฝ่าย B กีดกัน</span>
         <span class="scenario-name">ฝ่าย A: วางเรื่องส่วนตัว + ฝ่าย B: กีดกันฝ่าย A</span>
@@ -11112,7 +11126,7 @@
       </div>
     </div>
 
-    <div class="matrix-row">
+    <div class="matrix-row row-neutral">
       <div class="matrix-scenario">
         <span class="scenario-badge badge-neutral">➡️ ทางเลือก B</span>
         <span class="scenario-name">คุณ: บันทึกหลักฐาน/จี้งาน + เขา: ทำตามที่รับปาก</span>
